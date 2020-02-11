@@ -6,6 +6,9 @@ import { ShoppingListService } from '../shopping-list/shopping-list.service';
 
 @Injectable()
 export class RecipeService {
+  addIngredients(ingredients: Ingredient[]) {
+    throw new Error("Method not implemented.");
+  }
     recipeSelected = new EventEmitter<Recipe>();
 
     constructor(private shoppingListService: ShoppingListService) {
@@ -34,9 +37,13 @@ export class RecipeService {
 
     getRecipes() {
         return this.recipes.slice();
-    }  
+    } 
 
-    onAddToShoppingList(ingredients: Ingredient[]) {
+    getRecipe(index: number) {
+        return this.recipes[index];
+    }
+
+    AddIngredientsToShoppingList(ingredients: Ingredient[]) {
         this.shoppingListService.addIngredients(ingredients);
-      }
+    }
 }
