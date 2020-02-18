@@ -1,4 +1,4 @@
-import { EventEmitter, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 
 import { Ingredient } from '../shared/ingredient.model';
 import { Recipe } from './recipe-list/recipe.model';
@@ -6,10 +6,6 @@ import { ShoppingListService } from '../shopping-list/shopping-list.service';
 
 @Injectable()
 export class RecipeService {
-  addIngredients(ingredients: Ingredient[]) {
-    throw new Error("Method not implemented.");
-  }
-    recipeSelected = new EventEmitter<Recipe>();
 
     constructor(private shoppingListService: ShoppingListService) {
     }
