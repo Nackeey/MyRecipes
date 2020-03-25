@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+
 import { Routes, RouterModule } from '@angular/router';
 import { RecipesComponent } from './recipes.component';
 import { AuthGuard } from '../auth/auth.guard';
@@ -8,8 +9,8 @@ import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
 import { RecipesResolverService } from './recipes-resolver.service';
 
 const routes: Routes = [
-    { 
-        path: 'recipes',
+      { 
+        path: '',
         component: RecipesComponent,
         canActivate: [AuthGuard], 
         children: [
@@ -27,6 +28,4 @@ const routes: Routes = [
     ],
     exports: [RouterModule]
 })
-export class RecipesRoutingModule {
-    
-}
+export class RecipesRoutingModule {}
